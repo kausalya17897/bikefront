@@ -1,38 +1,206 @@
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.d-flex{
+  justify-content: space-between;
+  color:orangered;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content{
+  min-height: 90vh;;
+ 
+}
+.poster{
+  height:140px;
+  width: 240px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  height: min-content;
+  width: 300px;
+  margin-left: 0;
+  margin-right: 0;
+  border: 1px solid gray;
+}
+.content{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  
+  flex-wrap: wrap;
+  gap:30px;
+  margin-top: 40px;
+  margin-left: 45px;
+  
+}
+.container:hover{
+  transition: all .3s ease in out;
+  transform:scale(1.05);
+}
+.justify-content{
+  display: flex;
+  justify-content: space-around;
+}
+.justify-content>Button{
+  color:rgb(10, 10, 53);
+  font-size: 22px;
+}
+.icon{
+  height: 100px;
+}
+.saferides{
+  width: 280px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+.para{
+  text-align: left;
+}
+.dflex{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.centeralignpara{
+
+  margin-top: 40px;
+  margin-bottom: 100px;
+  margin-left: 470px;
+  width:600px;
+  
+}
+.leftalign{
+  text-align: left;
+  width: 600px;
+}
+.circleimage{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin-left: 150px;
+}
+.displayflex{
+  display: flex;
+}
+.bold{
+  font-weight: bold;
+}
+.marginleft{
+  margin-left: 300px;
+}
+.marginTop{
+  margin-top: 50px;
+}
+.marginBottom{
+  margin-bottom: 50px;
+}
+.textcenter{
+  text-align: center;
+}
+.borderless{
+  width: 280px;
+
+  border-radius: 5px;
+  padding: 10px;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 300px;
+  margin-right: 250px;
+  justify-content: space-around;
+}
+.fontsmall{
+  font-size: 13px;
+}
+.fontmedium{
+  font-size: 20px;
+}
+footer{
+  background-color:#474747;
+  height: 280px;
+  color:azure;
+  display: flex;
+  gap:100px;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 30px;
+
+}
+.footerlist>li{
+  text-decoration: none;
+  list-style-type: none;
+  
+}
+.imgsmall{
+  height:100px;
+}
+.login{
+  border: 1px solid black;
+  height:300px;
+  width: 500px;
+  margin-left: 560px;
+  padding: 20px;
+  
+}
+form{
+  text-align: left;
+}
+.booking{
+  display: flex;
+  flex-wrap: wrap;
+}
+.journey{
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 400px;
+  margin-right: 200px;
+  position: absolute;
+  top:40%;
+  left: 4%;
+  width: 930px;
+  height:60px;
+  
+}
+.Home{
+  height:100vh;
+width: 100%;
+  background-image: url("https://th.bing.com/th/id/OIP.Jiw9BmOIkQdi0yTqnNLEwgHaE7?w=273&h=182&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+background-repeat: no-repeat;
+
+background-position: center;
+background-size: cover;
+
+}
+.login.booking{
+  height: 100vh;
+}
+.booknow{
+  
+  right:10%;
+  z-index: 10;
+}
+.booking{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+flex-wrap: wrap;
+  gap:20px;
+  height:100vh;
+}
+.notfound{
+  height: 100vh;
+  margin-top: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.left{
+  color:white;
+  gap:5px;
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.leftheight{
+  height:20px;
 }
