@@ -1,12 +1,12 @@
 import './App.css';
 import { useState } from 'react';
-import{Switch,Route,Redirect} from "react-router-dom";
+import{Switch,Route} from "react-router-dom";
 
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { useEffect } from 'react';
-import {useHistory,useParams} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import WhyBike24 from './pages/WhyBike24';
@@ -15,6 +15,11 @@ import Signup from './pages/Signup'
 import {Booking,Bookingdetails} from './pages/fleetandpricing';
 import Payments from './pages/Payments';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Signin from './pages/Signin';
+import Register from './pages/Register';
+
+import Singinout from './pages/Singinout';
 function App() {
   const [data,setData]=useState();
   const history=useHistory();
@@ -78,8 +83,9 @@ Sign up </Button>
       <Safety/>
     </Route>
     <Route path="/signup">
-      <Signup/>
+     <Singinout/>
   </Route>
+  
     <Route path="/payments">
       <Payments/>
   </Route>
