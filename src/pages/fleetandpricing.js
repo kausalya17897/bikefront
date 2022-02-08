@@ -3,10 +3,11 @@ import React, { useEffect,useState } from 'react'
 import {useHistory,useParams} from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
+import { API_URL } from './global_constants';
 
 
 //export const  API_URL="https://61681515ba841a001727c589.mockapi.io";
-export const API_URL="https://rentalappbackend.herokuapp.com";
+
 
 
 

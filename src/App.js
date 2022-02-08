@@ -18,8 +18,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Register from './pages/Register';
-import { API_URL } from './pages/fleetandpricing';
+
 import Singinout from './pages/Singinout';
+import { API_URL } from './pages/global_constants';
 function App() {
   const [data,setData]=useState();
   const history=useHistory();
