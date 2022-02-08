@@ -37,7 +37,7 @@ useEffect(()=>{
     setData(mvs);
     console.log("data",data)
   });
-},[]);
+});
 console.log("gh",data);
 
   return (

@@ -28,10 +28,10 @@ console.log("data",data)
         <div>
 <div className="booking">
     
-    {data.map(({name,poster,id,engine,left,dayprice,weekly,monthly})=>(
+    {data.map(({name,poster,id,_id,engine,left,dayprice,weekly,monthly})=>(
      <Bike name={name}
      poster={poster}
-     id={id}
+     id={_id}
      engine={engine}
      left={left}
      price={dayprice}
