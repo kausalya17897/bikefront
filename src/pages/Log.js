@@ -1,0 +1,62 @@
+
+   
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
+export default function Login() {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+  const [message, setMessage] = useState("");
+
+  const postLoginData = () => {
+
+    const loginData = {
+      username: username,
+      password: password
+    }
+
+    fetch("https://rentalappbackend.herokuapp.com/usersdata/login", {
+      method: "POST",
+      body: JSON.stringify(loginData),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => response.json())
+      .then(tok => {
+        if (tok.message === "Login Successful") {
+          localStorage.setItem("x-auth-token", tok.token)
+          history.push("/fleetandpricing")
+        }
+        else {
+          setMessage(tok.message);
+        }
+      })
+
+  }
+
+  return (
+    <div>
+      <div className="settings-container">
+        <h3 className="settings-header">Login</h3>
+        <h3>{message ? message : ""}</h3>
+        <div className="form-container">
+          <div className="form-group">
+            <label htmlFor="username">Username : </label>
+            <input name="username" className="form-control" value={username} onChange={(event) => setUsername(event.target.value)} placeholder="username"></input>
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password : </label>
+            <input name="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="password"></input>
+          </div>
+          <div className="form-group-forgot">
+            <p className="forgot">Forgot Password?</p>
+          </div>
+          <button type="submit" className="signup" onClick={() => postLoginData()}>LOG IN</button>
+        </div>
+      </div>
+    </div>
+  );
+}

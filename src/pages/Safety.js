@@ -4,8 +4,8 @@ export default function Safety() {
   return(
        <div>
            <div>
- <h3>Advantages for using two wheeler for safety and health</h3>
- <p className="centeralignpara">With safety being the top priority for every individual, it gets riskier to use public transport at the moment with so many concerns regarding the hygiene and safety of such transportation. At the same time social distancing is becoming our number one practise which makes it even more difficult to use any kind of transport. Two wheelers being the most safest for commuting at this point, Bike24 is taking every measure to make two wheelers available to the public in a safe manner.</p>
+ <h3 className='saftitle'>Advantages for using two wheeler for safety and health</h3>
+ <p className="centeralignpara fs">With safety being the top priority for every individual, it gets riskier to use public transport at the moment with so many concerns regarding the hygiene and safety of such transportation. At the same time social distancing is becoming our number one practise which makes it even more difficult to use any kind of transport. Two wheelers being the most safest for commuting at this point, Bike24 is taking every measure to make two wheelers available to the public in a safe manner.</p>
 <h3  className="centeralignpara">How Bike24 is ensuring safety for everyone</h3> 
   </div>
   <div className='displayflex marginleft'>
@@ -76,28 +76,28 @@ export default function Safety() {
   <div className='flex marginBottom'>
 <div className='borderless'>
     <img className="icon" src="https://th.bing.com/th/id/OIP.0Avp6OCQgWq09VDw_tapIAHaHs?w=204&h=212&c=7&r=0&o=5&dpr=1.25&pid=1.7"/>
-    <h4 className='fontmedium'>Sanitization of bikes</h4>
+    <h4 className='fontmedium tc'>Sanitization of bikes</h4>
     <p className='textcenter fontsmall'>Our on-ground team is regularly screened for any signs or symptoms of illness, only then are they allowed to continue operations.</p>
 
 </div>
 <div className='borderless'>
     <img className="icon" src="https://th.bing.com/th/id/OIP.KQ35SjmjRmf0H7Svni8XsgHaHD?pid=ImgDet&rs=1"/>
-    <h4 className='fontmedium'>Easy bike sharing.</h4>
+    <h4 className='fontmedium tc'>Easy bike sharing.</h4>
     <p className='textcenter fontsmall'>With social distancing being imperative, ONN provides the on-ground team with masks. The teams are directed to wear the masks at all times.</p>
 </div>
 <div className='borderless'>
     <img className="icon" src="https://toppng.com/public/uploads/preview/dirt-bike-silhouette-icons-png-dirt-bike-11562896562ygln9b2atx.png"/>
-    <h4 className='fontmedium'>Variety of bikes</h4>
+    <h4 className='fontmedium tc'>Variety of bikes</h4>
     <p className='textcenter fontsmall'>Our team takes all the safety procedures, every employee uses the Aarogya Setu app to stay updated with the latest information.</p>
 </div>
 <div className='borderless'>
     <img className="icon" src="https://cdn0.iconfinder.com/data/icons/business-purchase/50/1-512.png"/>
-    <h4 className='fontmedium'>Easy payments and refunds</h4>
+    <h4 className='fontmedium tc'>Easy payments and refunds</h4>
     <p className='textcenter fontsmall'>Bike24 Stations are being sanitized with disinfectant daily, our team makes sure that the station is safe for customers to visit at all times.</p>
 </div>
 <div className='borderless'>
     <img className="icon" src="https://st3.depositphotos.com/7865540/18755/v/450/depositphotos_187557524-stock-illustration-long-term-icon-vector-illustration.jpg"/>
-    <h4 className='fontmedium'>Long term bookings</h4>
+    <h4 className='fontmedium tc'>Long term bookings</h4>
     <p className='textcenter fontsmall'>Bike24 Stations are being sanitized with disinfectant daily, our team makes sure that the station is safe for customers to visit at all times.</p>
 </div>
 

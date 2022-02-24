@@ -14,17 +14,27 @@ import { API_URL } from './global_constants';
 
 function Booking(){
     const[data,setData]=useState([]);
+    const history=useHistory();
     
-    
-useEffect(()=>{
-    fetch(`${API_URL}/fleetandpricing`)
-    .then((res)=>res.json())
+    const bookbike = () => {
+
+        const token = localStorage.getItem("x-auth-token");
+
+        if (!token) {
+            history.push("/login");
+        }
+    fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
+    headers: {
+        "x-auth-token": token
+    }
+}).then((res)=>res.json())
     .then((a)=>{
         console.log("a",a)
 setData(a)
-    })
-},[])
+    });
+};
 console.log("data",data)
+useEffect(bookbike, []);
     return(
         <div>
 <div className="booking">
@@ -139,4 +149,4 @@ console.log("bikedetails")
     )
 }
 
-export {Booking,Bookingdetails}
+export {Booking,Bookingdetails,Bikedetails}

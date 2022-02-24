@@ -19,10 +19,12 @@
 
 .container{
   height: min-content;
-  width: 300px;
+  width: 320px;
   margin-left: 0;
   margin-right: 0;
   border: 1px solid gray;
+  border-radius: 10px;
+  padding:15px;
 }
 .content{
   display: flex;
@@ -47,6 +49,10 @@
 }
 .icon{
   height: 100px;
+  padding-left: 95px;
+}
+.tc{
+  text-align: center;
 }
 .saferides{
   width: 280px;
@@ -169,13 +175,34 @@ form{
 .Home{
   height:100vh;
 width: 100%;
-  background-image: url("https://th.bing.com/th/id/OIP.Jiw9BmOIkQdi0yTqnNLEwgHaE7?w=273&h=182&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+  background-image: url("https://farm5.staticflickr.com/4264/35288414561_84220ae9a1.jpg");
 background-repeat: no-repeat;
-
+margin-top: 0px;
 background-position: center;
 background-size: cover;
 
 }
+.saftitle{text-align: center;
+font-size: 2.19rem;
+font-weight: 600;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.2;
+letter-spacing: normal;
+
+}
+.fs{
+  width: 64.13rem;
+    margin: 4rem 0;
+}
+
+.saftitle::after{
+color: #c80910;
+    display: block;
+    content: "____";
+    line-height: 0;
+}
+
 .login.booking{
   height: 100vh;
 }
@@ -203,4 +230,7 @@ flex-wrap: wrap;
 }
 .leftheight{
   height:20px;
+}
+.formcontainer{
+border: 1px solid black;
 }

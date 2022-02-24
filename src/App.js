@@ -8,60 +8,63 @@ import Toolbar from '@mui/material/Toolbar';
 import { useEffect } from 'react';
 import {useHistory} from 'react-router-dom';
 import Paper from '@mui/material/Paper';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import WhyBike24 from './pages/WhyBike24';
 import Safety from './pages/Safety'
-import Signup from './pages/Signup'
+import Signup from './pages/Register.js'
 import {Booking,Bookingdetails} from './pages/fleetandpricing';
 import Payments from './pages/Payments';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Signin from './pages/Signin';
-import Register from './pages/Register';
-
-import Singinout from './pages/Singinout';
+import Login from './pages/Log.js';
 import { API_URL } from './pages/global_constants';
 function App() {
   const [data,setData]=useState();
   const history=useHistory();
-const [mode,setMode]=useState("dark")
-const theme = createTheme({
-  palette: {
-    mode: mode,
-  },
-});
 
-useEffect(()=>{
-  fetch(`${API_URL}/fleetandpricing`)
-  .then((data)=>data.json())
-  .then((mvs)=>{
-    setData(mvs);
-    console.log("data",data)
-  });
+
+  const bikebook = () => {
+
+    const token = localStorage.getItem("x-auth-token");
+
+    if (!token) {
+        history.push("/fleetandpricing");
+    }
+fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
+headers: {
+    "x-auth-token": token
+}
+}).then((res)=>res.json())
+.then((a)=>{
+    console.log("a",a)
+setData(a)
 });
+};
+console.log("data",data)
+useEffect(bikebook, []);
+
 console.log("gh",data);
 
   return (
-    <ThemeProvider theme={theme}>
+    
     <Paper elevation={0} >
   <div className="App">
 
-  <AppBar position="static" style={{color:"blue",marginBottom:"20px",backgroundColor: "rgba(255, 165, 0, 0)"}}>
+  <AppBar position="static" style={{color:"blue",marginBottom:"0px",backgroundColor:"black"}}>
     <Toolbar variant="dense">
       <h3>Bike24</h3>
       <Button variant="text"color="inherit" onClick={()=>history.push('/')}>
-Home</Button>
-<Button variant="text"color="inherit" onClick={()=>history.push("/WhyBike24")}>
-WhyBike24</Button>
-<Button variant="text"color="inherit" onClick={()=>history.push("/fleetandpricing")}>
-Fleet and pricing</Button>
-<Button variant="text"color="inherit" onClick={()=>history.push("/Safety")}>
-Safety</Button>
+      Home</Button>
+      <Button variant="text"color="inherit" onClick={()=>history.push("/WhyBike24")}>
+      WhyBike24</Button>
+      <Button variant="text"color="inherit" onClick={()=>history.push("/fleetandpricing")}>
+      Fleet and pricing</Button>
+      <Button variant="text"color="inherit" onClick={()=>history.push("/Safety")}>
+      Safety</Button>
 
-<Button  style={{marginLeft:"auto"}}variant="text"color="inherit" onClick={()=>setMode(mode==="light"?"dark":"light")}>
-Light mode </Button>
+
 <Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/signup")}>
 Sign up </Button>
+<Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/login")}>
+Login </Button>
   </Toolbar>
   </AppBar>
  
@@ -75,8 +78,7 @@ Sign up </Button>
   <Route path="/fleetandpricing/:id">
   <Bookingdetails/>
   </Route>
-    <Route path="/fleetandpricing">
-      
+    <Route path="/fleetandpricing">  
   <Booking/>
     </Route>
 
@@ -84,9 +86,11 @@ Sign up </Button>
       <Safety/>
     </Route>
     <Route path="/signup">
-     <Singinout/>
+     <Signup/>
   </Route>
-  
+  <Route path="/login">
+     <Login/>
+  </Route>
     <Route path="/payments">
       <Payments/>
   </Route>
@@ -98,7 +102,7 @@ Sign up </Button>
 
 </div>
 </Paper>
-</ThemeProvider>
+
 )
 }
 function Notfound(){
