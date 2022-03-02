@@ -1,8 +1,6 @@
-
-   
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import './Log.css';
 export default function Login() {
 
   const [username, setUsername] = useState("");
@@ -16,9 +14,11 @@ export default function Login() {
       username: username,
       password: password
     }
-
+ // fetch("/usersdata/login", {
     fetch("https://rentalappbackend.herokuapp.com/usersdata/login", {
+    
       method: "POST",
+      
       body: JSON.stringify(loginData),
       headers: {
         "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export default function Login() {
     })
       .then((response) => response.json())
       .then(tok => {
-        if (tok.message === "Login Successful") {
+        if (tok.message === "successful login") {
           localStorage.setItem("x-auth-token", tok.token)
           history.push("/fleetandpricing")
         }
@@ -38,7 +38,7 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div className="logincontainer">
       <div className="settings-container">
         <h3 className="settings-header">Login</h3>
         <h3>{message ? message : ""}</h3>

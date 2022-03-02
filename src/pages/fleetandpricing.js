@@ -8,10 +8,6 @@ import { API_URL } from './global_constants';
 
 //export const  API_URL="https://61681515ba841a001727c589.mockapi.io";
 
-
-
-
-
 function Booking(){
     const[data,setData]=useState([]);
     const history=useHistory();
@@ -21,9 +17,12 @@ function Booking(){
         const token = localStorage.getItem("x-auth-token");
 
         if (!token) {
-            history.push("/login");
+            history.push("usersdata/login");
         }
-    fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
+
+      
+        fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
+         //fetch(`/fleetandpricing`,{ method: "GET",
     headers: {
         "x-auth-token": token
     }

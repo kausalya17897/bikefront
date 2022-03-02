@@ -29,6 +29,7 @@ function App() {
         history.push("/fleetandpricing");
     }
 fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
+//fetch(`/fleetandpricing`,{ method: "GET",
 headers: {
     "x-auth-token": token
 }
@@ -61,9 +62,9 @@ console.log("gh",data);
       Safety</Button>
 
 
-<Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/signup")}>
+<Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/usersdata/signup")}>
 Sign up </Button>
-<Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/login")}>
+<Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/usersdata/login")}>
 Login </Button>
   </Toolbar>
   </AppBar>
@@ -85,12 +86,13 @@ Login </Button>
     <Route path="/Safety">
       <Safety/>
     </Route>
-    <Route path="/signup">
+    <Route path="/usersdata/signup">
      <Signup/>
   </Route>
-  <Route path="/login">
+  <Route path="/usersdata/login">
      <Login/>
   </Route>
+  <Route path="/usersdata"></Route>
     <Route path="/payments">
       <Payments/>
   </Route>

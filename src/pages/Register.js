@@ -15,7 +15,8 @@ export default function Signup() {
       password: password
     }
 
-    fetch("https://rentalappbackend.herokuapp.com/usersdata/signup", {
+    //sfetch("/usersdata/signup", {
+      fetch("https://rentalappbackend.herokuapp.com/usersdata/signup", {
       method: "POST",
       body: JSON.stringify(postData),
       headers: {
@@ -29,12 +30,13 @@ export default function Signup() {
   }
 
   return (
+    <div className="signupcontainer">
     <div className="settings-container">
       <h3 className="settings-header">Sign Up for Free</h3>
       <div className="form-container">
 
         <div className="form-group">
-          <label htmlFor="username">Email Address : </label>
+          <label htmlFor="username">Username : </label>
           <input name="username" className="form-control" value={username} onChange={(event) => setUsername(event.target.value)} placeholder="username"></input>
         </div>
         <div className="form-group">
@@ -43,6 +45,7 @@ export default function Signup() {
         </div>
         <button className="signup" onClick={() => postUserData()}>Signup</button>
       </div>
+    </div>
     </div>
   );
 }
