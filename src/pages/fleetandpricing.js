@@ -21,8 +21,9 @@ function Booking(){
         }
 
       
-        fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
+        //fetch(`http://localhost:9000/fleetandpricing`,{ method: "GET",
          //fetch(`/fleetandpricing`,{ method: "GET",
+         fetch("https://rentalappserver.herokuapp.com/fleetandpricing",{ method: "GET",
     headers: {
         "x-auth-token": token
     }

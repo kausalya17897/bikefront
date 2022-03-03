@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import './Log.css';
-export default function Login() {
+export default function Login({setToken}) {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -14,8 +14,8 @@ export default function Login() {
       username: username,
       password: password
     }
- // fetch("/usersdata/login", {
-    fetch("https://rentalappbackend.herokuapp.com/usersdata/login", {
+ //fetch("http://localhost:9000/usersdata/login", {
+    fetch("https://rentalappserver.herokuapp.com/usersdata/login", {
     
       method: "POST",
       
@@ -28,6 +28,7 @@ export default function Login() {
       .then(tok => {
         if (tok.message === "successful login") {
           localStorage.setItem("x-auth-token", tok.token)
+          setToken(tok.token)
           history.push("/fleetandpricing")
         }
         else {

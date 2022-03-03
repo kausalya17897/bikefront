@@ -18,15 +18,21 @@ import Login from './pages/Log.js';
 import { API_URL } from './pages/global_constants';
 function App() {
   const [data,setData]=useState();
+  const [token,setToken]=useState(localStorage.getItem("x-auth-token"))
   const history=useHistory();
+
+  const logout=()=>{
+    localStorage.removeItem("x-auth-token");
+    setToken(null)
+    history.push("/usersdata/login")
+  }
 
 
   const bikebook = () => {
 
-    const token = localStorage.getItem("x-auth-token");
 
     if (!token) {
-        history.push("/fleetandpricing");
+        history.push("/usersdata/login");
     }
 fetch(`${API_URL}/fleetandpricing`,{ method: "GET",
 //fetch(`/fleetandpricing`,{ method: "GET",
@@ -61,11 +67,20 @@ console.log("gh",data);
       <Button variant="text"color="inherit" onClick={()=>history.push("/Safety")}>
       Safety</Button>
 
+{
+  !token  ? (
 
+ <>
 <Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/usersdata/signup")}>
 Sign up </Button>
 <Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={()=>history.push("/usersdata/login")}>
 Login </Button>
+ </>
+ ):(
+  <Button  style={{marginRight:"10px"}}variant="text"color="inherit" onClick={logout}>
+  Logout </Button>
+ )
+}
   </Toolbar>
   </AppBar>
  
@@ -90,7 +105,7 @@ Login </Button>
      <Signup/>
   </Route>
   <Route path="/usersdata/login">
-     <Login/>
+     <Login setToken={setToken}/>
   </Route>
   <Route path="/usersdata"></Route>
     <Route path="/payments">
