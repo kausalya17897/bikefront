@@ -15,7 +15,7 @@ export default function Login() {
       password: password
     }
  // fetch("/usersdata/login", {
-    fetch("https://rentalappbackend.herokuapp.com/usersdata/login", {
+    fetch("https://rentalbikeserver.herokuapp.com/usersdata/login", {
     
       method: "POST",
       

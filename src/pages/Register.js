@@ -16,7 +16,7 @@ export default function Signup() {
     }
 
     //sfetch("/usersdata/signup", {
-      fetch("https://rentalappbackend.herokuapp.com/usersdata/signup", {
+      fetch("https://rentalbikeserver.herokuapp.com/usersdata/signup", {
       method: "POST",
       body: JSON.stringify(postData),
       headers: {
