@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function Safety() {
   return(
-       <div>
+       <div className='Safety'>
            <div>
  <h3 className='saftitle'>Advantages for using two wheeler for safety and health</h3>
- <p className="centeralignpara fs">With safety being the top priority for every individual, it gets riskier to use public transport at the moment with so many concerns regarding the hygiene and safety of such transportation. At the same time social distancing is becoming our number one practise which makes it even more difficult to use any kind of transport. Two wheelers being the most safest for commuting at this point, Bike24 is taking every measure to make two wheelers available to the public in a safe manner.</p>
-<h3  className="centeralignpara">How Bike24 is ensuring safety for everyone</h3> 
+ <p className="centeralignpara fs mg">With safety being the top priority for every individual, it gets riskier to use public transport at the moment with so many concerns regarding the hygiene and safety of such transportation. At the same time social distancing is becoming our number one practise which makes it even more difficult to use any kind of transport. Two wheelers being the most safest for commuting at this point, Bike24 is taking every measure to make two wheelers available to the public in a safe manner.</p>
+<h3  className="centeralignpara cen">How Bike24 is ensuring safety for everyone</h3> 
   </div>
   <div className='displayflex marginleft'>
       <div>
@@ -47,7 +47,7 @@ export default function Safety() {
       <p className='leftalign marginleft'>Our employees follow all the safety procedures to give the best experience to the customers, every employee uses the Aarogya Setu app to stay updated with the latest information.</p>
   </div>
   </div>
-  <h3>Steps our on-ground team is taking to ensure safety.</h3>
+  <h3 className='saf'>Steps our on-ground team is taking to ensure safety.</h3>
   
   <div className='dflex'>
 <div className='saferides'>
@@ -72,7 +72,7 @@ export default function Safety() {
     <p className='textcenter'>Bike24 Stations are being sanitized with disinfectant daily, our team makes sure that the station is safe for customers to visit at all times.</p>
 </div>
   </div>
-  <h3>Benefits of choosing Bike24</h3>
+  <h3 className='saf'>Benefits of choosing Bike24</h3>
   <div className='flex marginBottom'>
 <div className='borderless'>
     <img className="icon" src="https://th.bing.com/th/id/OIP.0Avp6OCQgWq09VDw_tapIAHaHs?w=204&h=212&c=7&r=0&o=5&dpr=1.25&pid=1.7"/>

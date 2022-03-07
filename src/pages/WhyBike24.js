@@ -2,7 +2,7 @@ import React from 'react';
 
 function WhyBike24() {
   return (
-  <div className='Whybike24'>
+  <div className='Whybike'>
     
 <h3>Why Bike24?</h3>
 <h5>We simplified bike rentals, so you can focus on what's important to you.</h5>

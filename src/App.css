@@ -235,3 +235,27 @@ flex-wrap: wrap;
 .formcontainer{
 border: 1px solid black;
 }
+.Whybike{
+  margin: 10px;
+}
+.Safety{
+  margin: 10px;
+}
+.centeralignpara{
+  
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.mg{
+  margin-left: 470px;
+  margin-right: 300px;
+  width:600px;
+}
+.cen{
+  padding-left: 70px;
+}
+
+.saf{
+  margin-left: 35px;
+}
