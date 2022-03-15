@@ -23,7 +23,7 @@ return;
     }
 
     //fetch("http://localhost:9000/usersdata/signup", {
-      fetch(`{API_URL}/usersdata/signup`, {
+      fetch(`https://rentalappserver.herokuapp.com/usersdata/signup`, {
       method: "POST",
       body: JSON.stringify(postData),
       headers: {
@@ -32,6 +32,7 @@ return;
     })
       .then((response) =>response.json()).then((data) => {
         console.log(data);
+        history.push('/usersdata/login')
       })
       .catch((err) => {
         console.log(err);
@@ -52,7 +53,7 @@ return;
         <div className="form-group">
           <label htmlFor="password">Password : </label>
           <input name="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="password" pattern=" " required></input>
-        </div>
+        </div>{error}
         <button className="signup" onClick={() => postUserData()}>Signup</button>
       </div>
     </div>
